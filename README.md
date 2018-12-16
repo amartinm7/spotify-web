@@ -2,6 +2,8 @@
 
 # spotify-web
 
+Spotifiy web integration for playing with the music.
+
 ## Project setup
 ```
 npm install
