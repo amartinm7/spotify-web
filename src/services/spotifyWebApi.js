@@ -5,7 +5,7 @@ class SpotifyWebApi{
   constructor(){
     console.log('init SpotifyWebApi')
     this.client_id = 'c90bfd0ed0754972bfec8eae04bdcdbc'; // Your client id
-    this.client_secret = 'c69c83ff4deb4516a63d3fdd564e299d'; // Your secret
+    this.client_secret = 'xxx'; // Your secret
     this.authURL = 'https://accounts.spotify.com/api/token'
     this.authOptions = {
       url: this.authURL,
