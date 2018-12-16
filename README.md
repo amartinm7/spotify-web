@@ -1,3 +1,5 @@
+![Spotify](./_media/spotify-logo.png)
+
 # spotify-web
 
 ## Project setup
