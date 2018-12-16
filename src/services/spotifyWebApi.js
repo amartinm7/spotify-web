@@ -22,9 +22,9 @@ class SpotifyWebApi{
   }
   
   getArtists(){
+    //FIXME first sloppy version to see how works
     request.post(this.authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
-      
         // use the access token to access the Spotify Web API
         const token = body.access_token;
         const options = {
