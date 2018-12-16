@@ -32,6 +32,9 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+- https://developer.spotify.com
+- https://vuikit.js.org/guide/introduction
+- https://developer.spotify.com/documentation/web-api/reference/artists/
 
 ## Testing server via curl
 
