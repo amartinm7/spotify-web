@@ -5,18 +5,26 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "mocha 'test/**/*.js'"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "@vuikit/icons": "^0.8.1",
+    "@vuikit/theme": "^0.8.1",
+    "axios": "^0.18.0",
+    "request": "^2.88.0",
+    "vue": "^2.5.17",
+    "vuikit": "^0.8.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.1",
     "@vue/cli-service": "^3.2.0",
     "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "mocha": "^5.2.0",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
