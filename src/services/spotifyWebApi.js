@@ -3,9 +3,9 @@ const request = require('request'); // "Request" library
 
 class SpotifyWebApi{
   constructor(){
-    console.log('init SpotifyWebApi')
+    console.log('init SpotifyWebApi...')
     this.client_id = 'c90bfd0ed0754972bfec8eae04bdcdbc'; // Your client id
-    this.client_secret = 'xxx'; // Your secret
+    this.client_secret = 'dc6745d8f47f4c3bb2fe59baf00f6a85'; // Your secret
     this.authURL = 'https://accounts.spotify.com/api/token'
     this.authOptions = {
       url: this.authURL,
@@ -18,51 +18,22 @@ class SpotifyWebApi{
       json: true
     };
     this.spotifyURL = 'https://api.spotify.com/v1'
-    this.getArtists()
   }
   
-  getArtists(){
-    //FIXME first sloppy version to see how works
-    request.post(this.authOptions, function(error, response, body) {
-      if (!error && response.statusCode === 200) {
-        // use the access token to access the Spotify Web API
-        const token = body.access_token;
-        const options = {
-          url: 'https://api.spotify.com/v1/users/jmperezperez',
-          headers: {
-            'Authorization': 'Bearer ' + token
-          },
-          json: true
-        };
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-  
-        const config = {
-          headers: {
-            'Authorization': 'Bearer ' + token
-          }
+  async getArtists(){
+    const self = this
+    return new Promise((resolve, reject) => {
+      request.post(this.authOptions, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+          // use the access token to access the Spotify Web API
+          const token = body.access_token;
+          console.log(`token ${token}`)
+          resolve(token)
         }
-  
-        const data = {
-          'HTTP_CONTENT_LANGUAGE': 'us-US'
-        }
-  
-        const url = `${this.spotifyURL}/artists`
-        axios
-          .get(url, data, config)
-          .then(response => {
-              console.log(response)
-            }
-          ).catch(function (error) {
-          console.error(error)
-        })
-      }
-    });
-  
-
+        reject('error: invalid login')
+      })
+    })
   }
-}
 
 //export default new SpotifyWebApi()
-module.export = new SpotifyWebApi()
+module.exports = new SpotifyWebApi()

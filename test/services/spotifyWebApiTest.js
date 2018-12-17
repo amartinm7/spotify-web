@@ -6,8 +6,7 @@ describe("testing spotifyWebApi: ", function() {
   describe("testing getArtists: ", function() {
   
     it("testing 200: ", function() {
-      // spotifyWebApi.getArtists()
-      console.log('testing')
+      spotifyWebApi.getArtists().then(console.log)
       assert.equal('200', "200")
     })
   

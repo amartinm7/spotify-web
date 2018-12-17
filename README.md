@@ -33,14 +33,14 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - https://developer.spotify.com
+- https://developer.spotify.com/dashboard/login
 - https://vuikit.js.org/guide/introduction
 - https://developer.spotify.com/documentation/web-api/reference/artists/
 
 ## Testing server via curl
 
 ```
-curl -X GET -i "http://localhost:4000/" -H "Content-type: application/json" -H "Accept: application/json"
-curl -X POST http://localhost:8080/graphql -d '{"query": "query demo { helloWorld }" }' -H 'Content-Type: application/json'
+curl -X "GET" "https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n?market=ES&fields=items(added_by.id%2Ctrack(name%2Chref%2Calbum(name%2Chref)))" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer "
 ```
 
 # TIPS

@@ -1,5 +1,8 @@
 module.exports = {
   presets: [
-    '@vue/app'
+    '@vue/app',
+    'env',
+    'es2015',
+    'stage-0'
   ]
 }
